@@ -1,3 +1,12 @@
+# Login Credentials
+
+Use Username: johnd
+
+Use Password: m38rmF$
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
