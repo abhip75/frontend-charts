@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
 
+    const navigate = useNavigate();
+
+    const isLoggedIn = !!localStorage.getItem("token");
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    }
+    
     return(
        <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,7 +38,7 @@ const NavBar = () => {
             </ul>
             <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success" type="submit">Search</button>
+                <button className="btn btn-outline-danger" type="submit" onClick={handleLogout}>Logout</button>
             </form>
             </div>
         </div>
